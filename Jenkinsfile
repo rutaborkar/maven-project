@@ -34,11 +34,11 @@ pipeline {
                 }
             }
         }
-        stage ('deploy to dev') {
+        stage ('Archive the artifacts') {
              steps {
-                  sshagent(['deployTomcat']) {
-                  sh 'scp -o StrictHostKeyChecking=no */target/*.war ec2-user@172.31.35.54:/var/lib/tomcat/webapps'
-}                } }
+                  archiveArtifacts '**/*.war'
+             } 
+        }
 
          
 }
