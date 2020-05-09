@@ -1,4 +1,4 @@
-wapipeline {
+pipeline {
     agent any
 
 
