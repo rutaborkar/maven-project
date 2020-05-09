@@ -42,7 +42,7 @@ pipeline {
         
         stage ('Deploy .war to containers') {
              steps {
-                  deploy adapters: [tomcat7(credentialsId: 'Tomcat', path: '', url: 'http://3.21.126.56:8080/')], contextPath: '*/target/*.war', war: '**/*.war'
+             deploy adapters: [tomcat7(credentialsId: 'Tomcat', path: '', url: 'http://3.21.126.56:8080/')], contextPath: '/var/lib/tomcat/webapps', war: '**/*.war'
              } 
         }
 
