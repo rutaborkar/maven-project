@@ -1,4 +1,4 @@
-pipeline {
+wapipeline {
     agent any
 
 
@@ -40,7 +40,7 @@ pipeline {
              } 
         }
         
-        stage ('Archive the artifacts') {
+        stage ('Deploy .war to containers') {
              steps {
                   deploy adapters: [tomcat7(credentialsId: 'Tomcat', path: '', url: 'http://3.21.126.56:8080/')], contextPath: 'webapp', war: '**/*.war'
              } 
