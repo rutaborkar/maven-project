@@ -12,7 +12,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'MAVEN_HOME') {
-            
+                    echo ''
                     sh 'mvn clean compile'
                 }
             }
