@@ -12,6 +12,7 @@ pipeline {
 
             steps {
                 withMaven(maven : 'MAVEN_HOME') {
+                    echo 'New commit'
                     sh 'mvn clean compile'
                 }
             }
